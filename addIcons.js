@@ -1,43 +1,30 @@
-//create massive with icons (name, path, redirectURl)
-var icons = [
-	{
-		name:'twitter',
-		iconPath:'http://dinacheley.com/wialon/lessons/images/twitter-clr.svg',
-		href:'https://twitter.com/WialonGPS'
-	},	
-	{
-		name:'facebook',
-		iconPath:'http://dinacheley.com/wialon/lessons/images/facebook-clr.svg',
-		href:'https://web.facebook.com/Gurtam.en'
-	},
-	{
-		name:'insta',
-		iconPath:'http://dinacheley.com/wialon/lessons/images/insta-clr.svg',
-		href:'https://www.instagram.com/gurtam_team/'
-	},
-	{
-		name:'apple',
-		iconPath:'http://dinacheley.com/wialon/lessons/images/apple-clr.svg',
-		href:'https://apps.apple.com/ru/app/id960699792'
-	}
-];
+(function () {
 
-function createDiv(parentNode) {
+	//create array with icons (path, redirectURl)
+	var icons = [
+		{
+			iconPath:'http://dinacheley.com/wialon/lessons/images/twitter-clr.svg',
+			href:'https://twitter.com/WialonGPS'
+		},
+		{
+			iconPath:'http://dinacheley.com/wialon/lessons/images/facebook-clr.svg',
+			href:'https://web.facebook.com/Gurtam.en'
+		},
+		{
+			iconPath:'http://dinacheley.com/wialon/lessons/images/insta-clr.svg',
+			href:'https://www.instagram.com/gurtam_team/'
+		},
+		{
+			iconPath:'http://dinacheley.com/wialon/lessons/images/apple-clr.svg',
+			href:'https://apps.apple.com/ru/app/id960699792'
+		}
+	];
+
 	var div = document.createElement('div');
-    	div.innerHTML= createLinkIcon(icons);
-    	div.style = "border: none;margin:2em auto;display: flex; justify-content: center";
-    	document.getElementById(parentNode).after(div);
+	icons.forEach(function(icon){
+		div.innerHTML += "<a href='"+ icon.href +"' target='_blank'><img src='"+ icon.iconPath +"'></a>";
+	})
+	div.style = "border: none; margin:2em auto; display: flex; justify-content: center";
+	document.getElementById('login_body').after(div);
 
-}
-
-function createLinkIcon(massive){
-	var str = '';
-	for (var i = 0; i < massive.length; i++){
-		var src = massive[i].iconPath;
-		var link = massive[i].href
-		str = str + "<a href='"+link+"' target='_blank'><img src='"+src+"'></a>";
-	}
-	return(str);
-}
-
-createDiv('login_body');
+})()
