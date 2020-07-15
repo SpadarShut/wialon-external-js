@@ -16,7 +16,7 @@ var icons = [
 		href:'https://www.instagram.com/gurtam_team/'
 	},
 	{
-		name:'insta',
+		name:'apple',
 		iconPath:'http://dinacheley.com/wialon/lessons/images/apple-clr.svg',
 		href:'https://apps.apple.com/ru/app/id960699792'
 	}
@@ -24,9 +24,9 @@ var icons = [
 
 function createDiv(parentNode) {
 	var div = document.createElement('div');
-    div.innerHTML= createLinkIcon(icons);
-    div.style = "border: none;margin:2em auto;display: flex; justify-content: center";
-    document.getElementById(parentNode).after(div);
+    	div.innerHTML= createLinkIcon(icons);
+    	div.style = "border: none;margin:2em auto;display: flex; justify-content: center";
+    	document.getElementById(parentNode).after(div);
 
 }
 
